@@ -2,7 +2,7 @@
 
 ![Version](https://img.shields.io/github/v/tag/arcanistzed/dcm?label=Version&style=flat-square&color=2577a1) ![Latest Release Download Count](https://img.shields.io/github/downloads/arcanistzed/dcm/latest/module.zip?label=Downloads&style=flat-square&color=9b43a8) ![Foundry Core Compatible Version](https://img.shields.io/badge/dynamic/json.svg?url=https%3A%2F%2Fraw.githubusercontent.com%2Farcanistzed%2Fdcm%2Fmain%2Fmodule.json&label=Foundry%20Core%20Compatible%20Version&query=$.compatibleCoreVersion&style=flat-square&color=ff6400)
 
-Have you ever wished you could just right click in Foundry and inspect a specific element? Or that you could copy-paste or print with the context menu rather than using your keyboard? Or maybe you have a browser extension that uses the context menu?
+Have you ever wished you could just right click in Foundry and inspect a specific element? Or that you could copy-paste or print with the context menu rather than using your keyboard? Mybe you have a browser extension that uses the context menu?
 
 This module re-enables the default browser context menu in Foundry Virtual Tabletop.
 
