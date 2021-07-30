@@ -6,7 +6,7 @@ Use the default browser context menu in Foundry Virtual Tabletop.
 
 ## Installation
 
-In the setup screen, use the URL https://github.com/arcanistzed/dcm/releases/latest/download/module.json to install the module.
+In the setup screen, use the URL `https://github.com/arcanistzed/dcm/releases/latest/download/module.json` to install the module.
 
 ## License
 
@@ -18,4 +18,4 @@ You can submit bugs via [Github Issues](https://github.com/arcanistzed/dcm/issue
 
 ## Contact me
 
-Come hang out on my Discord server: https://discord.gg/AAkZWWqVav where my username is [@arcanist#4317](https://discord.com/users/455117777745870860) or [click here to send me an email](mailto:arcanistzed@gmail.com?subject=dcm%20module%20for%20Foundry%20VTT).
+Come hang out on [my Discord server](https://discord.gg/AAkZWWqVav) where my username is [@arcanist#4317](https://discord.com/users/455117777745870860) or [click here to send me an email](mailto:arcanistzed@gmail.com?subject=dcm%20module%20for%20Foundry%20VTT).
