@@ -6,6 +6,8 @@ Have you ever wished you could just right click in Foundry and inspect a specifi
 
 This module re-enables the default browser context menu in Foundry Virtual Tabletop.
 
+Hold Ctrl to disable this temporarily if you need to interact with one of Foundry's context menus.
+
 ## Installation
 
 In the setup screen, use the URL `https://github.com/arcanistzed/dcm/releases/latest/download/module.json` to install the module.
