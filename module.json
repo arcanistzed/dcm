@@ -21,5 +21,9 @@
   ],
   "url": "This is auto replaced",
   "manifest": "This is auto replaced",
-  "download": "This is auto replaced"
+  "download": "This is auto replaced",
+  "readme": "https://raw.githubusercontent.com/arcanistzed/dcm/blob/main/README.md",
+  "changelog": "https://raw.githubusercontent.com/arcanistzed/dcm/main/CHANGELOG.md",
+  "license": "https://raw.githubusercontent.com/arcanistzed/dcm/blob/main/LICENSE",
+  "bugs": "https://github.com/arcanistzed/dcm/issues"
 }
