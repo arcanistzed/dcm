@@ -17,10 +17,11 @@ In the setup screen, use the URL `https://github.com/arcanistzed/dcm/releases/la
 Copyright © 2021 arcanist
 
 This package is under an [MIT license](LICENSE) and the [Foundry Virtual Tabletop Limited License Agreement for module development](https://foundryvtt.com/article/license/).
+
 ## Bugs
 
 You can submit bugs via [Github Issues](https://github.com/arcanistzed/dcm/issues/new/choose) or on [my Discord server](https://discord.gg/AAkZWWqVav).
 
 ## Contact me
 
-Come hang out on my [my Discord server](https://discord.gg/AAkZWWqVav) or [click here to send me an email](mailto:arcanistzed@gmail.com?subject=DCM%20module%20for%20Foundry%20VTT).
+Come hang out on my [my Discord server](https://discord.gg/AAkZWWqVav) or [click here to send me an email](mailto:arcanistzed@gmail.com?subject=Default%20Context%20Menu%20module).
