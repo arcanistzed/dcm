@@ -19,6 +19,10 @@
   "scripts": [
     "dcm.js"
   ],
+  "keywords": [
+    "right-click",
+    "context menu"
+  ],
   "url": "This is auto replaced",
   "manifest": "This is auto replaced",
   "download": "This is auto replaced",
