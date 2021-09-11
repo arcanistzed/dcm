@@ -17,7 +17,7 @@
     }
   ],
   "scripts": [
-    "dcm.js"
+    "scripts/dcm.js"
   ],
   "keywords": [
     "right-click",
