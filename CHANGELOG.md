@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.3.0 - Oct 4 2021
+
+Add option to invert the keybinding
+
 ## 0.2.1 - 11 Sept 2021
 
 Fix file structure to get the script to load properly
