@@ -2,7 +2,8 @@
 
 ## 0.4.0 - 20 Nov 2021
 
-Switched to Core keybinding registration (requires v9d2 or later)
+* Switched to Core keybinding registration (requires v9d2 or later)
+* Improvements to pausing/unpausing to make it work as expected
 
 ## 0.3.0 - 4 Oct 2021
 

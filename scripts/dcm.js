@@ -14,7 +14,7 @@ class Dcm {
             config: true,
             type: Boolean,
             default: false,
-            onChange: val => { this.pause = val; Dcm.log(false, "settings changed", this.pause) },
+            onChange: val => { Dcm.pause = val; Dcm.log(false, "settings changed", Dcm.pause) },
         }));
 
         // Register for DevMode
@@ -48,38 +48,43 @@ class Dcm {
     /** Whether Foundry's context menu is "paused"
      * @memberof Dcm
      */
-    pause;
+    static pause = false;
 
     /** Activate event listeners which handle Ctrl key down, Ctrl key up, and right-click
      * @memberof Dcm
      */
     activateEventListeners() {
-        Hooks.on("init", () => game.keybindings.register(Dcm.ID, "pauseContextMenu", {
-            name: "Pause Context Menu",
-            hint: "Pause showing the Default Context Menu",
-            editable: [
-                { key: "CONTROL" }
-            ],
-            // If Ctrl key is pressed, pause showing the context menu
-            onDown: () => {
-                this.pause = !game.settings.get(Dcm.ID, "invert");
+        Hooks.on("init", () => {
+            // Default value
+            Dcm.pause = !!game.settings.get(Dcm.ID, "invert");
 
-                Dcm.log(false, "keydown | pause:", this.pause, "; Invert:", game.settings.get(Dcm.ID, "invert"));
-            },
+            // Register keybinding
+            game.keybindings.register(Dcm.ID, "pauseContextMenu", {
+                name: "Pause Context Menu",
+                hint: "Pause showing the Default Context Menu",
+                uneditable: [
+                    { key: "CONTROL" }
+                ],
+                // If Ctrl key is pressed, pause showing the context menu
+                onDown: () => {
+                    Dcm.pause = !game.settings.get(Dcm.ID, "invert");
 
-             // If Ctrl key is let go, unpause showing the context menu
-            onUp: () => {
-                this.pause = game.settings.get(Dcm.ID, "invert");
+                    Dcm.log(false, "keydown | pause:", Dcm.pause, "; Invert:", game.settings.get(Dcm.ID, "invert"));
+                },
 
-                Dcm.log(false, "keyup | pause:", this.pause, "; Invert:", game.settings.get(Dcm.ID, "invert"));
-            },
-        }));
+                // If Ctrl key is let go, unpause showing the context menu
+                onUp: () => {
+                    Dcm.pause = !!game.settings.get(Dcm.ID, "invert");
+
+                    Dcm.log(false, "keyup | pause:", Dcm.pause, "; Invert:", game.settings.get(Dcm.ID, "invert"));
+                },
+            })
+        });
 
         // Show the context menu, depending on if it's paused or not
         document.addEventListener("contextmenu", event => {
-            if (!this.pause) event.stopPropagation();
-            Dcm.log(false, "contextmenu", !this.pause);
-            this.pause = game.settings.get(Dcm.ID, "invert");
+            if (!Dcm.pause) event.stopPropagation();
+            Dcm.log(false, "contextmenu", !Dcm.pause);
         }, true);
     };
 };
