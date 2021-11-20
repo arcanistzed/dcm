@@ -1,6 +1,10 @@
 # Changelog
 
-## 0.3.0 - Oct 4 2021
+## 0.4.0 - 20 Nov 2021
+
+Switched to Core keybinding registration (requires v9d2 or later)
+
+## 0.3.0 - 4 Oct 2021
 
 Add option to invert the keybinding
 
