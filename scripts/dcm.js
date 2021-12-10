@@ -30,6 +30,9 @@ class Dcm {
             });
             // Activate listeners
             this.activateEventListeners();
+
+            // Expose API
+            game.modules.get(Dcm.ID).pause = this.pause;
         });
 
         // Register for DevMode
