@@ -54,38 +54,42 @@ class Dcm {
      * @memberof Dcm
      */
     activateEventListeners() {
-        Hooks.on("init", () => {
+        Hooks.on("init", async () => {
             // Default value
             Dcm.pause = !!game.settings.get(Dcm.ID, "invert");
 
-            // Register keybinding
-            game.keybindings.register(Dcm.ID, "pauseContextMenu", {
-                name: "Pause Context Menu",
-                hint: "Pause showing the Default Context Menu",
-                uneditable: [
-                    { key: "CONTROL" }
-                ],
-                // If Ctrl key is pressed, pause showing the context menu
-                onDown: () => {
-                    Dcm.pause = !game.settings.get(Dcm.ID, "invert");
-
-                    Dcm.log(false, "keydown | pause:", Dcm.pause, "; Invert:", game.settings.get(Dcm.ID, "invert"));
-                },
-
-                // If Ctrl key is let go, unpause showing the context menu
-                onUp: () => {
-                    Dcm.pause = !!game.settings.get(Dcm.ID, "invert");
-
-                    Dcm.log(false, "keyup | pause:", Dcm.pause, "; Invert:", game.settings.get(Dcm.ID, "invert"));
-                },
-            })
+            // Show the context menu, depending on if it's paused or not
+            document.addEventListener("contextmenu", event => {
+                if (!Dcm.pause && game.user.isGM) event.stopPropagation();
+                Dcm.log(false, "contextmenu", !Dcm.pause);
+            }, true);
         });
+    };
 
-        // Show the context menu, depending on if it's paused or not
-        document.addEventListener("contextmenu", event => {
-            if (!Dcm.pause) event.stopPropagation();
-            Dcm.log(false, "contextmenu", !Dcm.pause);
-        }, true);
+    /** Register keybindings
+     * @memberof Dcm
+     */
+    registerKeybindings() {
+        game.keybindings.register(Dcm.ID, "pauseContextMenu", {
+            name: "Pause Context Menu",
+            hint: "Pause showing the Default Context Menu",
+            uneditable: [
+                { key: "CONTROL" }
+            ],
+            // If Ctrl key is pressed, pause showing the context menu
+            onDown: () => {
+                Dcm.pause = !game.settings.get(Dcm.ID, "invert");
+
+                Dcm.log(false, "keydown | pause:", Dcm.pause, "; Invert:", game.settings.get(Dcm.ID, "invert"));
+            },
+
+            // If Ctrl key is let go, unpause showing the context menu
+            onUp: () => {
+                Dcm.pause = !!game.settings.get(Dcm.ID, "invert");
+
+                Dcm.log(false, "keyup | pause:", Dcm.pause, "; Invert:", game.settings.get(Dcm.ID, "invert"));
+            },
+        });
     };
 };
 new Dcm();
