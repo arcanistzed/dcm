@@ -15,7 +15,7 @@ class Dcm {
                 config: true,
                 type: Boolean,
                 default: false,
-                onChange: val => { Dcm.pause = val; Dcm.log(false, "settings changed", Dcm.pause) },
+                onChange: val => { Dcm.pause = val; Dcm.log(false, "settings changed", Dcm.pause); },
             });
             game.settings.register(Dcm.ID, "dmOnly", {
                 name: "DM Only",
