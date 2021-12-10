@@ -6,8 +6,8 @@ class Dcm {
      * @memberof Dcm
      */
     constructor() {
-
-        Hooks.on("init", () => {// Register settings
+        Hooks.on("init", () => {
+            // Register settings
             game.settings.register(Dcm.ID, "invert", {
                 name: game.i18n.localize("dcm.settings.invert.name"),
                 hint: game.i18n.localize("dcm.settings.invert.hint"),
@@ -35,6 +35,19 @@ class Dcm {
                 config: true,
                 type: Boolean,
                 default: true,
+            });
+            game.settings.register(Dcm.ID, "timeoutDuration", {
+                name: game.i18n.localize("dcm.settings.timeoutDuration.name"),
+                hint: game.i18n.localize("dcm.settings.timeoutDuration.hint"),
+                scope: "client",
+                config: true,
+                type: Number,
+                range: {
+                    min: 1,
+                    max: 60,
+                    step: 1
+                },
+                default: 10,
             });
 
             // Activate listeners
@@ -122,8 +135,8 @@ class Dcm {
 
                 Dcm.log(false, "keydown | pause:", this.pause, "; Invert:", game.settings.get(Dcm.ID, "invert"));
 
-                // Return to default after ten seconds
-                setTimeout(() => this.pause = game.settings.get(Dcm.ID, "invert"), 10000);
+                // Return to default after the timeout elapses
+                setTimeout(() => this.pause = game.settings.get(Dcm.ID, "invert"), game.settings.get(Dcm.ID, "timeoutDuration") * 1000);
             },
 
             // If Ctrl key is let go, unpause showing the context menu

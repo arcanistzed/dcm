@@ -12,6 +12,10 @@
             "showStateIcon": {
                 "name": "Show State Icon",
                 "hint": "Show an icon indicating whether or not the Default Context Menu is paused."
+            },
+            "timeoutDuration": {
+                "name": "Timeout Duration",
+                "hint": "The number of seconds after which the Default Context Menu should timeout."
             }
         },
         "keybindings": {
