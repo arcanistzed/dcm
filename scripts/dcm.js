@@ -28,6 +28,15 @@ class Dcm {
                 type: Boolean,
                 default: false,
             });
+            game.settings.register(Dcm.ID, "showStateIcon", {
+                name: "Show State Icon",
+                hint: "Show an icon indicating whether or not the Default Context Menu is paused.",
+                scope: "client",
+                config: true,
+                type: Boolean,
+                default: true,
+            });
+
             // Activate listeners
             this.activateEventListeners();
 
@@ -75,6 +84,8 @@ class Dcm {
      */
     set pause(value) {
         Dcm.log(false, "pause set to", value);
+        const state = document.querySelector(`#${Dcm.ID}-state`);
+        if (game.settings.get(Dcm.ID, "showStateIcon") && state) !value ? state.style.opacity = "75%" : state.style.opacity = "20%";
         this.#pause = value;
     };
 
@@ -82,17 +93,17 @@ class Dcm {
      * @memberof Dcm
      */
     activateEventListeners() {
-            this.registerKeybindings();
+        this.registerKeybindings();
         if (game.settings.get(Dcm.ID, "showStateIcon")) this.displayStateIcon();
 
         // Default value
         this.pause = !!game.settings.get(Dcm.ID, "invert");
 
-            // Show the context menu, depending on if it's paused or not and if it's DM only
-            document.addEventListener("contextmenu", event => {
+        // Show the context menu, depending on if it's paused or not and if it's DM only
+        document.addEventListener("contextmenu", event => {
             if (!this.pause && (!game.settings.get(Dcm.ID, "dmOnly") || game.user.isGM)) event.stopPropagation();
             Dcm.log(false, "contextmenu", !this.pause);
-            }, true);
+        }, true);
     };
 
     /** Register keybindings
@@ -122,6 +133,28 @@ class Dcm {
                 Dcm.log(false, "keyup | pause:", this.pause, "; Invert:", game.settings.get(Dcm.ID, "invert"));
             },
         });
+    };
+
+    /** State Icon
+     * @return {HTMLDivElement} - The state icon 
+     * @memberof Dcm
+     */
+    async displayStateIcon() {
+        const state = document.createElement("div")
+        state.id = `${Dcm.ID}-state`;
+        state.innerHTML = await fetch(`modules/${Dcm.ID}/assets/context-menu.svg`).then(r => r.text());
+        mergeObject(state.style, {
+            width: "32px",
+            height: "32px",
+            padding: "2px 0",
+            marginBottom: "5px",
+            backgroundColor: "white",
+            borderRadius: "5px",
+            border: "4px outset",
+            opacity: this.pause ? "20%" : "75%",
+        });
+        document.querySelector("#navigation")?.after(state);
+        return state;
     };
 };
 new Dcm();

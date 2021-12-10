@@ -18,6 +18,10 @@ Copyright © 2021 arcanist
 
 This package is under an [MIT license](LICENSE) and the [Foundry Virtual Tabletop Limited License Agreement for module development](https://foundryvtt.com/article/license/).
 
+---
+
+Context Menu icon by Arthur Shlain from NounProject.com
+
 ## Bugs
 
 You can submit bugs via [Github Issues](https://github.com/arcanistzed/dcm/issues/new/choose) or on [my Discord server](https://discord.gg/AAkZWWqVav).
