@@ -6,8 +6,8 @@ class Dcm {
      * @memberof Dcm
      */
     constructor() {
-        // Register settings
-        Hooks.on("init", () => {
+
+        Hooks.on("init", () => {// Register settings
             game.settings.register(Dcm.ID, "invert", {
                 name: "Invert Keybinding",
                 hint: "Only enable the default context menu when the Control key is pressed",
@@ -15,7 +15,10 @@ class Dcm {
                 config: true,
                 type: Boolean,
                 default: false,
-                onChange: val => { Dcm.pause = val; Dcm.log(false, "settings changed", Dcm.pause); },
+                onChange: val => {
+                    this.pause = val;
+                    Dcm.log(false, "settings changed", this.pause);
+                },
             });
             game.settings.register(Dcm.ID, "dmOnly", {
                 name: "DM Only",
@@ -25,15 +28,14 @@ class Dcm {
                 type: Boolean,
                 default: false,
             });
+            // Activate listeners
+            this.activateEventListeners();
         });
 
         // Register for DevMode
         Hooks.once('devModeReady', ({ registerPackageDebugFlag }) => {
             registerPackageDebugFlag(Dcm.ID);
         });
-
-        // Activate listeners
-        this.activateEventListeners();
     };
 
     /** Module ID
@@ -55,26 +57,39 @@ class Dcm {
         };
     };
 
-    /** Whether Foundry's context menu is "paused"
+    /** Store whether Foundry's context menu is "paused" privately
      * @memberof Dcm
      */
-    static pause = false;
+    #pause = false;
+
+    /** Get whether Foundry's context menu is "paused"
+     * @memberof Dcm
+     */
+    get pause() { return this.#pause; };
+
+    /** Runs when the pause value is changed and updates the state icon
+     * @memberof Dcm
+     */
+    set pause(value) {
+        Dcm.log(false, "pause set to", value);
+        this.#pause = value;
+    };
 
     /** Activate event listeners which handle Ctrl key down, Ctrl key up, and right-click
      * @memberof Dcm
      */
     activateEventListeners() {
-        Hooks.on("init", async () => {
-            // Default value
-            Dcm.pause = !!game.settings.get(Dcm.ID, "invert");
             this.registerKeybindings();
+        if (game.settings.get(Dcm.ID, "showStateIcon")) this.displayStateIcon();
+
+        // Default value
+        this.pause = !!game.settings.get(Dcm.ID, "invert");
 
             // Show the context menu, depending on if it's paused or not and if it's DM only
             document.addEventListener("contextmenu", event => {
-                if (!Dcm.pause && (!game.settings.get("dcm", "dmOnly") || game.user.isGM)) event.stopPropagation();
-                Dcm.log(false, "contextmenu", !Dcm.pause);
+            if (!this.pause && (!game.settings.get(Dcm.ID, "dmOnly") || game.user.isGM)) event.stopPropagation();
+            Dcm.log(false, "contextmenu", !this.pause);
             }, true);
-        });
     };
 
     /** Register keybindings
@@ -89,19 +104,19 @@ class Dcm {
             ],
             // If Ctrl key is pressed, pause showing the context menu
             onDown: () => {
-                Dcm.pause = !game.settings.get(Dcm.ID, "invert");
+                this.pause = !game.settings.get(Dcm.ID, "invert");
 
-                Dcm.log(false, "keydown | pause:", Dcm.pause, "; Invert:", game.settings.get(Dcm.ID, "invert"));
+                Dcm.log(false, "keydown | pause:", this.pause, "; Invert:", game.settings.get(Dcm.ID, "invert"));
 
-                // Return to default after one second
-                setTimeout(() => Dcm.pause = game.settings.get(Dcm.ID, "invert"), 1000);
+                // Return to default after ten seconds
+                setTimeout(() => this.pause = game.settings.get(Dcm.ID, "invert"), 10000);
             },
 
             // If Ctrl key is let go, unpause showing the context menu
             onUp: () => {
-                Dcm.pause = !!game.settings.get(Dcm.ID, "invert");
+                this.pause = !!game.settings.get(Dcm.ID, "invert");
 
-                Dcm.log(false, "keyup | pause:", Dcm.pause, "; Invert:", game.settings.get(Dcm.ID, "invert"));
+                Dcm.log(false, "keyup | pause:", this.pause, "; Invert:", game.settings.get(Dcm.ID, "invert"));
             },
         });
     };
