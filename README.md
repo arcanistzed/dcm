@@ -6,7 +6,7 @@ Have you ever wished you could just right click in Foundry and inspect a specifi
 
 This module re-enables the default browser context menu in Foundry Virtual Tabletop.
 
-Hold Ctrl to disable this temporarily if you need to interact with one of Foundry's context menus.
+You can easily toggle this with a keybinding (default is the Control key), if you need to interact with one of Foundry's context menus.
 
 ## Installation
 
