@@ -4,13 +4,14 @@
 
 ### Added
 
-* Switched to Core keybinding registration (requires v9d2 or later)
+* Switched to Core keybinding registration
 * Improvements to pausing/unpausing to make it work as expected
 * Localization support
 * Restrict to DM only option
 * Timeout option
 * Exposed pause value in the API (`game.modules.get("dcm")?.pause`)
 * Added an icon in the top left to show whether the default context menu is paused or not
+![image](https://user-images.githubusercontent.com/82790112/145652363-d73252d7-734d-40da-a27f-7c9d3e96a757.png)
 
 ## 0.3.0 - 4 Oct 2021
 
