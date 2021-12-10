@@ -92,6 +92,9 @@ class Dcm {
                 Dcm.pause = !game.settings.get(Dcm.ID, "invert");
 
                 Dcm.log(false, "keydown | pause:", Dcm.pause, "; Invert:", game.settings.get(Dcm.ID, "invert"));
+
+                // Return to default after one second
+                setTimeout(() => Dcm.pause = game.settings.get(Dcm.ID, "invert"), 1000);
             },
 
             // If Ctrl key is let go, unpause showing the context menu
