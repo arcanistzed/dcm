@@ -1,0 +1,24 @@
+{
+    "dcm": {
+        "settings": {
+            "invert": {
+                "name": "Invert Keybinding",
+                "hint": "Only enable the default context menu when the Control key is pressed"
+            },
+            "dmOnly": {
+                "name": "DM Only",
+                "hint": "Only enable the default context menu for DMs"
+            },
+            "showStateIcon": {
+                "name": "Show State Icon",
+                "hint": "Show an icon indicating whether or not the Default Context Menu is paused."
+            }
+        },
+        "keybindings": {
+            "pauseContextMenu": {
+                "name": "Pause Context Menu",
+                "hint": "Pause showing the Default Context Menu"
+            }
+        }
+    }
+}

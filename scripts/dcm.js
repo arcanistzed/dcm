@@ -9,8 +9,8 @@ class Dcm {
 
         Hooks.on("init", () => {// Register settings
             game.settings.register(Dcm.ID, "invert", {
-                name: "Invert Keybinding",
-                hint: "Only enable the default context menu when the Control key is pressed",
+                name: game.i18n.localize("dcm.settings.invert.name"),
+                hint: game.i18n.localize("dcm.settings.invert.hint"),
                 scope: "client",
                 config: true,
                 type: Boolean,
@@ -21,16 +21,16 @@ class Dcm {
                 },
             });
             game.settings.register(Dcm.ID, "dmOnly", {
-                name: "DM Only",
-                hint: "Only enable the default context menu for DMs",
+                name: game.i18n.localize("dcm.settings.dmOnly.name"),
+                hint: game.i18n.localize("dcm.settings.dmOnly.hint"),
                 scope: "world",
                 config: true,
                 type: Boolean,
                 default: false,
             });
             game.settings.register(Dcm.ID, "showStateIcon", {
-                name: "Show State Icon",
-                hint: "Show an icon indicating whether or not the Default Context Menu is paused.",
+                name: game.i18n.localize("dcm.settings.showStateIcon.name"),
+                hint: game.i18n.localize("dcm.settings.showStateIcon.hint"),
                 scope: "client",
                 config: true,
                 type: Boolean,
@@ -111,8 +111,8 @@ class Dcm {
      */
     registerKeybindings() {
         game.keybindings.register(Dcm.ID, "pauseContextMenu", {
-            name: "Pause Context Menu",
-            hint: "Pause showing the Default Context Menu",
+            name: game.i18n.localize("dcm.keybindings.pauseContextMenu.name"),
+            hint: game.i18n.localize("dcm.keybindings.pauseContextMenu.hint"),
             uneditable: [
                 { key: "CONTROL" }
             ],
