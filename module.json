@@ -16,7 +16,7 @@
       "reddit": "u/arcanistzed"
     }
   ],
-  "esmodules": [
+  "scripts": [
     "scripts/dcm.js"
   ],
   "languages": [
