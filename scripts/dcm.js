@@ -58,7 +58,7 @@ class Dcm {
         });
 
         // Register for DevMode
-        Hooks.once('devModeReady', ({ registerPackageDebugFlag }) => {
+        Hooks.once("devModeReady", ({ registerPackageDebugFlag }) => {
             registerPackageDebugFlag(Dcm.ID);
         });
     };
