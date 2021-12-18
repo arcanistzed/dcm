@@ -4,7 +4,7 @@
   "description": "Use the default browser context menu",
   "version": "This is auto replaced",
   "manifestPlusVersion": "1.2.0",
-  "minimumCoreVersion": 9.231,
+  "minimumCoreVersion": 9.236,
   "compatibleCoreVersion": "9",
   "author": "arcanist",
   "authors": [
