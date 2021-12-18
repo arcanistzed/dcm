@@ -127,7 +127,8 @@ class Dcm {
             name: game.i18n.localize("dcm.keybindings.pauseContextMenu.name"),
             hint: game.i18n.localize("dcm.keybindings.pauseContextMenu.hint"),
             uneditable: [
-                { key: "CONTROL" }
+                { key: "ControlLeft" },
+                { key: "ControlRight" }
             ],
             // If Ctrl key is pressed, pause showing the context menu
             onDown: () => {

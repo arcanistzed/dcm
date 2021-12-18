@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.4.1 - 18 Dec 2021
+
+### Fixed
+
+* Works with v9t3's breaking change to keybindings
+
 ## 0.4.0 - 10 Dec 2021
 
 ### Added
