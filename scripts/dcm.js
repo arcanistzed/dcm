@@ -167,7 +167,7 @@ class Dcm {
             border: "4px outset",
             opacity: this.pause ? "20%" : "75%",
         });
-        document.querySelector("#navigation")?.after(state);
+        Hooks.once("ready", () => document.querySelector("#navigation")?.after(state));
         return state;
     };
 };
