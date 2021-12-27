@@ -130,6 +130,7 @@ class Dcm {
                 { key: "ControlLeft" },
                 { key: "ControlRight" }
             ],
+            precedence: CONST.KEYBINDING_PRECEDENCE.PRIORITY,
             // If Ctrl key is pressed, pause showing the context menu
             onDown: () => {
                 this.pause = !game.settings.get(Dcm.ID, "invert");
