@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.4.2 - 4 Jan 2022
+
+Improved loading of state icon and it is now actually included in the release
+
 ## 0.4.1 - 18 Dec 2021
 
 ### Fixed
