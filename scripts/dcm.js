@@ -76,9 +76,9 @@ class Dcm {
      * @memberof Dcm
      */
     static log(force, ...args) {
-        const shouldLog = force || game.modules.get('_dev-mode')?.api?.getPackageDebugValue(Dcm.ID);
+        const shouldLog = force || game.modules.get("_dev-mode")?.api?.getPackageDebugValue(Dcm.ID);
         if (shouldLog) {
-            console.log(this.ID, '|', ...args);
+            console.log(this.ID, "|", ...args);
         };
     };
 
