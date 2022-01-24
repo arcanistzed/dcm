@@ -6,10 +6,10 @@
   "manifestPlusVersion": "1.2.0",
   "minimumCoreVersion": 9.236,
   "compatibleCoreVersion": "9",
-  "author": "arcanist",
+  "author": "Arcanist",
   "authors": [
     {
-      "name": "arcanist",
+      "name": "Arcanist",
       "url": "https://arcanistzed.github.io/",
       "email": "arcanistzed@gmail.com",
       "discord": "arcanist#4317",
@@ -25,10 +25,6 @@
       "name": "English",
       "path": "languages/en.json"
     }
-  ],
-  "keywords": [
-    "right-click",
-    "context menu"
   ],
   "url": "This is auto replaced",
   "manifest": "This is auto replaced",
