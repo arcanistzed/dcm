@@ -2,10 +2,6 @@
   "name": "dcm",
   "title": "Default Context Menu",
   "description": "Use the default browser context menu",
-  "version": "This is auto replaced",
-  "manifestPlusVersion": "1.2.0",
-  "minimumCoreVersion": 9.236,
-  "compatibleCoreVersion": "9",
   "author": "Arcanist",
   "authors": [
     {
@@ -16,6 +12,17 @@
       "reddit": "u/arcanistzed"
     }
   ],
+  "url": "This is auto replaced",
+  "license": "https://github.com/arcanistzed/dcm/blob/main/LICENSE",
+  "readme": "https://github.com/arcanistzed/dcm/blob/main/README.md",
+  "bugs": "https://github.com/arcanistzed/dcm/issues/new/choose",
+  "changelog": "https://github.com/arcanistzed/dcm/blob/main/CHANGELOG.md",
+  "flags": {
+    "allowBugReporter": true
+  },
+  "version": "This is auto replaced",
+  "minimumCoreVersion": 9.236,
+  "compatibleCoreVersion": 9,
   "esmodules": [
     "scripts/dcm.js"
   ],
@@ -26,11 +33,7 @@
       "path": "languages/en.json"
     }
   ],
-  "url": "This is auto replaced",
   "manifest": "This is auto replaced",
   "download": "This is auto replaced",
-  "readme": "https://github.com/arcanistzed/dcm/blob/main/README.md",
-  "changelog": "https://github.com/arcanistzed/dcm/blob/main/CHANGELOG.md",
-  "license": "https://github.com/arcanistzed/dcm/blob/main/LICENSE",
-  "bugs": "https://github.com/arcanistzed/dcm/issues"
+  "manifestPlusVersion": "1.2.0"
 }
