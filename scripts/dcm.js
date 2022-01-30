@@ -2,9 +2,7 @@
  * @class Dcm
  */
 class Dcm {
-    /** Creates an instance of Dcm
-     * @memberof Dcm
-     */
+    /** Creates an instance of Dcm */
     constructor() {
         Hooks.on("init", () => {
             // Register settings
@@ -61,50 +59,37 @@ class Dcm {
         Hooks.once("devModeReady", ({ registerPackageDebugFlag }) => {
             registerPackageDebugFlag(Dcm.ID);
         });
-    };
+    }
 
-    /** Module ID
-     * @static
-     * @memberof Dcm
-     */
+    /** Module ID */
     static ID = "dcm";
 
     /** DevMode logging helper
-     * @static
-     * @param {Boolean} force - Whether to force logging
+     * @param {boolean} force - Whether to force logging
      * @param {*} args - Arguments to log
-     * @memberof Dcm
      */
     static log(force, ...args) {
         const shouldLog = force || game.modules.get("_dev-mode")?.api?.getPackageDebugValue(Dcm.ID);
         if (shouldLog) {
-            console.log(this.ID, "|", ...args);
-        };
-    };
+            console.log(Dcm.ID, "|", ...args);
+        }
+    }
 
-    /** Store whether Foundry's context menu is "paused" privately
-     * @memberof Dcm
-     */
+    /** Store whether Foundry's context menu is "paused" privately */
     #pause = false;
 
-    /** Get whether Foundry's context menu is "paused"
-     * @memberof Dcm
-     */
-    get pause() { return this.#pause; };
+    /** Get whether Foundry's context menu is "paused" */
+    get pause() { return this.#pause; }
 
-    /** Runs when the pause value is changed and updates the state icon
-     * @memberof Dcm
-     */
+    /** Runs when the pause value is changed and updates the state icon */
     set pause(value) {
         Dcm.log(false, "pause set to", value);
         const state = document.querySelector(`#${Dcm.ID}-state`);
         if (game.settings.get(Dcm.ID, "showStateIcon") && state) !value ? state.style.opacity = "75%" : state.style.opacity = "20%";
         this.#pause = value;
-    };
+    }
 
-    /** Activate event listeners which handle Ctrl key down, Ctrl key up, and right-click
-     * @memberof Dcm
-     */
+    /** Activate event listeners which handle Ctrl key down, Ctrl key up, and right-click */
     activateEventListeners() {
         this.registerKeybindings();
         if (game.settings.get(Dcm.ID, "showStateIcon")) this.displayStateIcon();
@@ -117,11 +102,9 @@ class Dcm {
             if (!this.pause && (!game.settings.get(Dcm.ID, "dmOnly") || game.user.isGM)) event.stopPropagation();
             Dcm.log(false, "contextmenu", !this.pause);
         }, true);
-    };
+    }
 
-    /** Register keybindings
-     * @memberof Dcm
-     */
+    /** Register keybindings */
     registerKeybindings() {
         game.keybindings.register(Dcm.ID, "pauseContextMenu", {
             name: game.i18n.localize("dcm.keybindings.pauseContextMenu.name"),
@@ -148,11 +131,10 @@ class Dcm {
                 Dcm.log(false, "keyup | pause:", this.pause, "; Invert:", game.settings.get(Dcm.ID, "invert"));
             },
         });
-    };
+    }
 
     /** State Icon
      * @return {HTMLDivElement} - The state icon 
-     * @memberof Dcm
      */
     async displayStateIcon() {
         const state = document.createElement("div")
@@ -170,8 +152,8 @@ class Dcm {
         });
         Hooks.once("ready", () => document.querySelector("#navigation")?.after(state));
         return state;
-    };
-};
+    }
+}
 new Dcm();
 
 // Default           ; keydown: pause = true  ; keyup: pause = false
