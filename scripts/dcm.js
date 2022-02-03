@@ -7,8 +7,8 @@ class Dcm {
         Hooks.on("init", () => {
             // Register settings
             game.settings.register(Dcm.ID, "invert", {
-                name: game.i18n.localize("dcm.settings.invert.name"),
-                hint: game.i18n.localize("dcm.settings.invert.hint"),
+                name: "dcm.settings.invert.name",
+                hint: "dcm.settings.invert.hint",
                 scope: "client",
                 config: true,
                 type: Boolean,
@@ -19,24 +19,24 @@ class Dcm {
                 },
             });
             game.settings.register(Dcm.ID, "dmOnly", {
-                name: game.i18n.localize("dcm.settings.dmOnly.name"),
-                hint: game.i18n.localize("dcm.settings.dmOnly.hint"),
+                name: "dcm.settings.dmOnly.name",
+                hint: "dcm.settings.dmOnly.hint",
                 scope: "world",
                 config: true,
                 type: Boolean,
                 default: false,
             });
             game.settings.register(Dcm.ID, "showStateIcon", {
-                name: game.i18n.localize("dcm.settings.showStateIcon.name"),
-                hint: game.i18n.localize("dcm.settings.showStateIcon.hint"),
+                name: "dcm.settings.showStateIcon.name",
+                hint: "dcm.settings.showStateIcon.hint",
                 scope: "client",
                 config: true,
                 type: Boolean,
                 default: true,
             });
             game.settings.register(Dcm.ID, "timeoutDuration", {
-                name: game.i18n.localize("dcm.settings.timeoutDuration.name"),
-                hint: game.i18n.localize("dcm.settings.timeoutDuration.hint"),
+                name: "dcm.settings.timeoutDuration.name",
+                hint: "dcm.settings.timeoutDuration.hint",
                 scope: "client",
                 config: true,
                 type: Number,
@@ -107,8 +107,8 @@ class Dcm {
     /** Register keybindings */
     registerKeybindings() {
         game.keybindings.register(Dcm.ID, "pauseContextMenu", {
-            name: game.i18n.localize("dcm.keybindings.pauseContextMenu.name"),
-            hint: game.i18n.localize("dcm.keybindings.pauseContextMenu.hint"),
+            name: "dcm.keybindings.pauseContextMenu.name",
+            hint: "dcm.keybindings.pauseContextMenu.hint",
             uneditable: [
                 { key: "ControlLeft" },
                 { key: "ControlRight" }
