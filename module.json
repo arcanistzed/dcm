@@ -1,39 +1,44 @@
 {
-  "name": "dcm",
-  "title": "Default Context Menu",
-  "description": "Use the default browser context menu",
-  "author": "Arcanist",
-  "authors": [
-    {
-      "name": "Arcanist",
-      "url": "https://arcanistzed.github.io/",
-      "email": "arcanistzed@gmail.com",
-      "discord": "arcanist#4317",
-      "reddit": "u/arcanistzed"
-    }
-  ],
-  "url": "This is auto replaced",
-  "license": "https://github.com/arcanistzed/dcm/blob/main/LICENSE",
-  "readme": "https://github.com/arcanistzed/dcm/blob/main/README.md",
-  "bugs": "https://github.com/arcanistzed/dcm/issues/new/choose",
-  "changelog": "https://github.com/arcanistzed/dcm/blob/main/CHANGELOG.md",
-  "flags": {
-    "allowBugReporter": true
-  },
-  "version": "This is auto replaced",
-  "minimumCoreVersion": "9.236",
-  "compatibleCoreVersion": "9",
-  "esmodules": [
-    "scripts/dcm.js"
-  ],
-  "languages": [
-    {
-      "lang": "en",
-      "name": "English",
-      "path": "languages/en.json"
-    }
-  ],
-  "manifest": "This is auto replaced",
-  "download": "This is auto replaced",
-  "manifestPlusVersion": "1.2.0"
+	"name": "dcm",
+	"title": "Default Context Menu",
+	"description": "Use the default browser context menu",
+	"author": "Arcanist",
+	"authors": [
+		{
+			"name": "Arcanist",
+			"url": "https://arcanistzed.github.io/",
+			"email": "arcanistzed@gmail.com",
+			"discord": "arcanist#4317",
+			"reddit": "u/arcanistzed"
+		}
+	],
+	"url": "This is auto replaced",
+	"license": "https://github.com/arcanistzed/dcm/blob/main/LICENSE",
+	"readme": "https://github.com/arcanistzed/dcm/blob/main/README.md",
+	"bugs": "https://github.com/arcanistzed/dcm/issues/new/choose",
+	"changelog": "https://github.com/arcanistzed/dcm/blob/main/CHANGELOG.md",
+	"flags": {
+		"allowBugReporter": true
+	},
+	"version": "This is auto replaced",
+	"minimumCoreVersion": "9.236",
+	"compatibleCoreVersion": "9",
+	"esmodules": [
+		"scripts/dcm.js"
+	],
+	"languages": [
+		{
+			"lang": "en",
+			"name": "English",
+			"path": "languages/en.json"
+		},
+		{
+			"lang": "es",
+			"name": "Español",
+			"path": "languages/es.json"
+		}
+	],
+	"manifest": "This is auto replaced",
+	"download": "This is auto replaced",
+	"manifestPlusVersion": "1.2.0"
 }

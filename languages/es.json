@@ -1,0 +1,28 @@
+{
+	"dcm": {
+		"settings": {
+			"invert": {
+				"name": "Invertir Atajo del Teclado",
+				"hint": "Habilita únicamente el menú contextual por defecto cuando la tecla Control se presiona"
+			},
+			"dmOnly": {
+				"name": "Solo DM",
+				"hint": "Habilita únicamente el menú contextual por defecto para los DMs"
+			},
+			"showStateIcon": {
+				"name": "Mostrar Icono de Estado",
+				"hint": "Muestra un icono que indica si el Menú Contextual por defecto se pone en pausa o no"
+			},
+			"timeoutDuration": {
+				"name": "Duración del Tiempo de Cierre",
+				"hint": "Cuantos segundos tarda el Menú Contextual por defecto en cerrarse"
+			}
+		},
+		"keybindings": {
+			"pauseContextMenu": {
+				"name": "Pausar Menú Contextual",
+				"hint": "Pausa mostrando el Menú Contextual"
+			}
+		}
+	}
+}
